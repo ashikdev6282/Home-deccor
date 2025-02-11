@@ -1,0 +1,37 @@
+.agent-details-page {
+    padding: 2rem;
+  }
+  
+  .agent-details {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .details-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .details-info h4 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .details-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .details-info h2 {
+      font-size: 1.8rem;
+    }
+  
+    .details-info h4 {
+      font-size: 1rem;
+    }
+  }
+  

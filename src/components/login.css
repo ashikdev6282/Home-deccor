@@ -1,0 +1,226 @@
+/* General Reset and Body Styling */
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212, #282828);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Form Title */
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6b6b;
+  }
+  
+  /* Input Box Styling */
+  .input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #555;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .input-box input:focus,
+  .input-box input:valid {
+    border-color: #ff6b6b;
+  }
+  
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #aaa;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #ff6b6b;
+  }
+  
+  .input-box span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #ff6b6b;
+    transition: 0.3s;
+  }
+  
+  .input-box input:focus ~ span {
+    width: 100%;
+  }
+  
+  /* Forgot Password Link */
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  
+  .forgot-password a {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password a:hover {
+    color: #e63946;
+  }
+  
+  /* Glowing Button Styling */
+  .glowing-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #121212;
+    background: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .glowing-button:hover {
+    background: #e63946;
+  }
+  
+  .glowing-button:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 60%);
+    transform: rotate(0deg);
+    transition: 0.5s;
+    z-index: -1;
+  }
+  
+  .glowing-button:hover:before {
+    transform: rotate(360deg);
+  }
+  
+  /* Register Link */
+  .register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .register-link a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .register-link a:hover {
+    color: #e63946;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 350px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    .input-box input {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+  
+    .glowing-button {
+      font-size: 1rem;
+      padding: 8px 12px;
+    }
+  
+    .forgot-password a {
+      font-size: 0.8rem;
+    }
+  
+    .register-link a {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .input-box input {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  
+    .glowing-button {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+  
+    .forgot-password a {
+      font-size: 0.7rem;
+    }
+  
+    .register-link a {
+      font-size: 0.8rem;
+    }
+  }
+  

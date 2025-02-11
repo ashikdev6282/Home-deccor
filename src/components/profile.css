@@ -1,0 +1,186 @@
+/* General Profile Container */
+.profile-container {
+  max-width: 90%; /* Dynamic width for responsiveness */
+  width: 100%;
+  margin: 2rem auto; /* Centered horizontally */
+  padding: 1.5rem; /* Reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+  /* Profile Header */
+  .profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-pic {
+    width: 150px; /* Slightly larger */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff6b6b;
+  }
+  
+  .profile-header h2 {
+    font-size: 2rem; /* Larger font size */
+    margin-top: 0.5rem;
+    color: #333;
+  }
+  
+  .profile-header p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #ff6b6b;
+  }
+  
+  .logout-btn {
+    background-color: #ff6b6b;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tabs button {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .tabs button.active {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    padding: 1rem;
+  }
+  
+  /* Property Grid */
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* More flexible grid */
+    gap: 2rem;
+  }
+  
+  .property-card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .property-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .property-details {
+    padding: 1.2rem;
+  }
+  
+  .property-details h4 {
+    font-size: 1.4rem;
+    color: #444;
+  }
+  
+  .property-price {
+    font-weight: bold;
+    color: #ff6b6b;
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .profile-container {
+      padding: 1.5rem;
+    }
+  
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .property-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile-container {
+      padding: 1rem;
+    }
+  
+    .tabs {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile-actions {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .property-grid {
+      grid-template-columns: 1fr; /* Single column */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .profile-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .property-card img {
+      height: 150px;
+    }
+    .profile-actions {
+      gap: 0.5rem;
+    }
+  }
+  

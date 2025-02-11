@@ -1,0 +1,154 @@
+/* General Container */
+.edit-profile-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+    box-sizing: border-box;
+  }
+  
+  /* Title */
+  .edit-profile-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Section */
+  .form-section {
+    margin-bottom: 2rem;
+  }
+  
+  .form-section-title {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+  }
+  
+  /* Profile Image Section */
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff6b6b;
+  }
+  
+  .profile-upload-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-upload-btn:hover {
+    background-color: #f04a4a;
+  }
+  
+  /* Form Inputs */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2c2c2c;
+    color: #e0e0e0;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  textarea:focus {
+    border-color: #ff6b6b;
+    outline: none;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  /* Buttons */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f04a4a;
+  }
+  
+  .cancel-btn {
+    background-color: #444;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #333;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .edit-profile-container {
+      padding: 1.5rem;
+    }
+  
+    .profile-image-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .input-container {
+      margin-bottom: 1.5rem;
+    }
+  
+    button {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+  

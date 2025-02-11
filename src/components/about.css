@@ -1,0 +1,276 @@
+/* General Styles */
+body, html {
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://plus.unsplash.com/premium_photo-1684445034834-c8dec93ed218?w=1920&auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D") no-repeat center center/cover;  
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    padding: 1rem;
+    margin-top: 90px;
+    border-radius: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      height: 500px;
+      padding: 2rem 1rem;
+    }
+  
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Why Choose Us Section */
+  .why-choose-us {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .choose-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .choose-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .choose-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .choose-card img {
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .choose-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .choose-card {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .choose-card {
+      flex: 1 1 100%; /* Full-width cards for mobile devices */
+    }
+  }
+  
+  /* Achievements Section */
+  .achievements {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .achievement-stats {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping for smaller screens */
+    gap: 20px;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .achievement {
+    text-align: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 200px;
+  }
+  
+  .achievement-number {
+    font-size: 2.5rem;
+    color: #ff7a59;
+    animation: bounce 2s infinite;
+  }
+  
+  .achievement p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .achievement {
+      flex: 1 1 calc(50% - 20px); /* 2 items per row for tablets */
+    }
+  
+    .achievement-number {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .achievement {
+      flex: 1 1 100%; /* Full-width items for mobile devices */
+    }
+  
+    .achievement-number {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Call to Action Section */
+  .call-to-action {
+    background: linear-gradient(135deg, #ff7a59, #ff4d4d);
+    text-align: center;
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    animation: fadeInUp 2s ease-in-out;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .call-to-action p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    background: white;
+    color: #ff7a59;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .call-to-action h2 {
+      font-size: 1.8rem;
+    }
+  
+    .call-to-action p {
+      font-size: 1rem;
+    }
+  
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .call-to-action h2 {
+      font-size: 1.5rem;
+    }
+  
+    .call-to-action p {
+      font-size: 0.9rem;
+    }
+  
+    .cta-button {
+      font-size: 0.8rem;
+      padding: 0.5rem 1.2rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

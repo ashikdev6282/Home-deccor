@@ -1,0 +1,162 @@
+/* Cozy Apartment Page Styles */
+.cozy-apartment-page {
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 30px;
+  }
+  
+  /* Page Title */
+  .cozy-apartment-page h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 15px;
+    font-weight: 600;
+    animation: slideDown 0.8s ease-out;
+  }
+  
+  /* Property Image */
+  .cozy-apartment-page img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .cozy-apartment-page img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Price and Description */
+  .cozy-apartment-page p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 15px 0;
+  }
+  
+  .cozy-apartment-page strong {
+    color: #000;
+    font-weight: 700;
+  }
+  
+  /* Property Features List */
+  .cozy-apartment-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .cozy-apartment-page ul li {
+    font-size: 1.1rem;
+    color: #444;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cozy-apartment-page ul li:before {
+    content: "✓";
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  /* Buttons Styling */
+  .rent-now-btn, .back-home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* Rent Now Button */
+  .rent-now-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  }
+  
+  .rent-now-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
+  }
+  
+  /* Back to Home Button */
+  .back-home-btn {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+  }
+  
+  .back-home-btn:hover {
+    background: linear-gradient(45deg, #218838, #1e7e34);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(33, 136, 56, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .cozy-apartment-page {
+      padding: 15px;
+    }
+  
+    .cozy-apartment-page h2 {
+      font-size: 2.2rem;
+    }
+  
+    .cozy-apartment-page p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cozy-apartment-page h2 {
+      font-size: 1.8rem;
+    }
+  
+    .cozy-apartment-page p {
+      font-size: 1rem;
+    }
+  
+    .cozy-apartment-page ul li {
+      font-size: 0.9rem;
+    }
+  
+    button, .back-home-btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cozy-apartment-page h2 {
+      font-size: 1.5rem;
+    }
+  
+    .cozy-apartment-page p {
+      font-size: 0.9rem;
+    }
+  
+    button, .back-home-btn {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+    }
+  }
+  

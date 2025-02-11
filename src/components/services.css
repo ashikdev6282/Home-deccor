@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #252323, #1c1c1c);
+  }
+  
+  /* Services Section */
+  .services-1 {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out; /* Fade-in animation for the entire section */
+  }
+  
+  .services-title-1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    animation: slideDown 1.2s ease-in-out; /* Slide-down effect for the title */
+  }
+  
+  .services-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect for the subtitle */
+  }
+  
+  .services-grid-1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Service Card */
+  .service-card-1 {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: calc(var(--card-index) * 0.2s); /* Staggered animation for cards */
+    animation-fill-mode: backwards; /* Ensures cards animate in sequence */
+  }
+  
+  .service-card-1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    animation: bounce 0.5s ease-in-out; /* Add bounce effect on hover */
+  }
+  
+  .service-icon-1 {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: zoomIn 1s ease-in-out; /* Zoom effect for the icon */
+  }
+  
+  .service-card-1 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    animation: fadeInUp 1.5s ease-in-out; /* Fade-in-up effect for the title */
+  }
+  
+  .service-card-1 p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+    animation: fadeInUp 1.8s ease-in-out; /* Fade-in-up effect for the description */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-title-1 {
+      font-size: 2rem;
+    }
+  
+    .services-subtitle {
+      font-size: 1rem;
+    }
+  
+    .service-card-1 {
+      max-width: 45%; /* Two cards per row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-card-1 {
+      max-width: 100%; /* One card per row */
+    }
+  
+    .services-title-1 {
+      font-size: 1.8rem;
+    }
+  
+    .services-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
