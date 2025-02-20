@@ -4,8 +4,12 @@ import PropertyDetails from "./propertcomptdetails";
 import AgentDetails from "./agentdetails";
 import PropertyFeatures from "./propertyfeatures";
 import PropertyImage from "./propertyimage";
+import { useParams } from "react-router-dom";
 
 const ModernHousePage = () => {
+
+  const { propertyId } = useParams();
+
   const propertyDetails = {
     title: "Modern House in San Francisco",
     price: "$1,800,000",
@@ -62,7 +66,7 @@ const ModernHousePage = () => {
           {/* Property Photo */}
 
           {/* Property Details */}
-          <PropertyDetails {...propertyDetails} />
+          <PropertyDetails  />
           
           {/* Property Features */}
           <PropertyFeatures features={propertyFeatures} />

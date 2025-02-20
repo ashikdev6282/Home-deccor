@@ -7,7 +7,7 @@ import Home from './pages/homepage';
 import AboutPage from './pages/aboutpage';
 import Services from './pages/servicepage';
 import PropertiesPage from './pages/mainproperty';
-import LuxuryVillaPageSection from './components/propertydetails';
+import FullPropertySection from './components/propertydetails';
 import CozyApartmentPage from './components/propertydetails1';
 import ModernHousePage from './components/propertydetails2';
 import RentProperties from './components/rentproperties';
@@ -35,15 +35,14 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/property/:id" element={<PropertyDetails type="rent" />} />
+        <Route path="/property/:propertyId" element={<FullPropertySection />} />
         <Route path="/sale-property/:id" element={<PropertyDetails type="sale" />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contactus" element={<ContactusPage />} />
         <Route path="/properties" element={<PropertiesPage />} />
-        <Route path="/luxury-villa" element={<LuxuryVillaPageSection />} />
-        <Route path="/cozy-apartment" element={<CozyApartmentPage />} />
-        <Route path="/modern-house" element={<ModernHousePage />} />
+        <Route path="/cozy-apartment/:propertyId" element={<CozyApartmentPage />} />
+        <Route path="/modern-house/:propertyId" element={<ModernHousePage />} />
         <Route path="/rent-properties" element={<RentProperties />} />
         <Route path="/sale-properties" element={<SaleProperties />} />
         <Route path="/listing" element={<ModernPropertyCard />} />

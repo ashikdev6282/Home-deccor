@@ -1,11 +1,15 @@
-import React from "react";
+import React  from "react";
 import Navbar from "./navbar";
 import PropertyDetails from "./propertcomptdetails";
 import AgentDetails from "./agentdetails";
 import PropertyFeatures from "./propertyfeatures";
 import PropertyImage from "./propertyimage";
+import { useParams } from "react-router-dom";
 
 const CozyApartmentPage = () => {
+
+  const { propertyId } = useParams();
+
   const propertyDetails = {
     title: "Cozy Apartment in Manhattan",
     price: "$3,200/month",
@@ -61,7 +65,7 @@ const CozyApartmentPage = () => {
           {/* Property Photo */}
 
           {/* Property Details */}
-          <PropertyDetails {...propertyDetails} />
+          <PropertyDetails />
           {/* Property Features */}
           <PropertyFeatures features={propertyFeatures} />
         </div>

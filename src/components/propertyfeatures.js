@@ -11,6 +11,8 @@ const PropertyFeatures = ({ features }) => {
     }));
   };
 
+
+
   return (
     <div className="property-features">
       <h2>Property Features</h2>

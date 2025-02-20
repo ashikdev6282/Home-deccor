@@ -14,7 +14,7 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,16 +24,67 @@ const Register = () => {
     }
   }, []);
 
+  // 🔹 Handle Input Changes and Validation
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Validate input when user types
+    validateField(name, value);
   };
 
+  // 🔹 Validation Functions
+  const validateField = (name, value) => {
+    let errorMsg = "";
+
+    switch (name) {
+      case "customername":
+        if (!/^[a-zA-Z\s]+$/.test(value)) {
+          errorMsg = "Full name should only contain letters and spaces.";
+        }
+        break;
+
+      case "email":
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          errorMsg = "Invalid email format.";
+        }
+        break;
+
+      case "phone":
+        if (!/^\d{10}$/.test(value)) {
+          errorMsg = "Phone number must be 10 digits.";
+        }
+        break;
+
+      case "password":
+        if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$/.test(value)) {
+          errorMsg =
+            "Password must be at least 8 characters, include uppercase, lowercase, a number, and a special character.";
+        }
+        break;
+
+      case "confirmPassword":
+        if (value !== formData.password) {
+          errorMsg = "Passwords do not match.";
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: errorMsg }));
+  };
+
+  // 🔹 Handle Form Submission with Validation
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      toast.error("Passwords do not match!", { position: "top-center" });
+    // Run full validation before submitting
+    let newErrors = {};
+    Object.keys(formData).forEach((field) => validateField(field, formData[field]));
+    if (Object.values(errors).some((error) => error)) {
+      toast.error("Please fix the errors before submitting.", { position: "top-center" });
       return;
     }
 
@@ -47,14 +98,11 @@ const Register = () => {
 
       toast.success("Registered successfully!", { position: "top-center" });
 
-      setSuccess(true);
       setTimeout(() => {
-        window.location.href = "/login";
+        navigate("/login");
       }, 2000);
     } catch (error) {
-      toast.error(error.response?.data?.message || "Registration failed.", {
-        position: "top-center",
-      });
+      toast.error(error.response?.data?.message || "Registration failed.", { position: "top-center" });
     }
   };
 
@@ -80,6 +128,7 @@ const Register = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.customername && <p className="error-text">{errors.customername}</p>}
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -92,6 +141,7 @@ const Register = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.email && <p className="error-text">{errors.email}</p>}
             </div>
             <div className="form-group">
               <label htmlFor="phone">Phone Number</label>
@@ -104,6 +154,7 @@ const Register = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.phone && <p className="error-text">{errors.phone}</p>}
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
@@ -116,6 +167,7 @@ const Register = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.password && <p className="error-text">{errors.password}</p>}
             </div>
             <div className="form-group">
               <label htmlFor="confirmPassword">Confirm Password</label>
@@ -128,6 +180,7 @@ const Register = () => {
                 onChange={handleChange}
                 required
               />
+              {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
             </div>
             <button type="submit" className="register-button">
               Register

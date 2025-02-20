@@ -5,13 +5,33 @@ import PropertyFeatures from "./propertyfeatures";
 import AgentDetails from "./agentdetails";  
 import PropertyDetails from "./propertcomptdetails";
 import PropertyImage from "./propertyimage";
+import { useParams } from "react-router-dom";
 
 const FullPropertySection = () => {
+
+  const { propertyId } = useParams();
+
   const [featuresOpen, setFeaturesOpen] = useState({
     propertyDetails: false,
     utilityDetails: false,
     outdoorFeatures: false,
   });
+
+  
+
+  const agentDetails = {
+    name: "Jane Doe",
+    photo: "https://via.placeholder.com/100",
+    role: "Property Agent",
+    location: "New York, USA",
+    email: "jane.doe@example.com",
+    phone: "+1234567890",
+    socialLinks: [
+      { href: "#", icon: "fab fa-facebook" },
+      { href: "#", icon: "fab fa-twitter" },
+      { href: "#", icon: "fab fa-instagram" },
+    ],
+  };
 
   const features = [
     {
@@ -30,20 +50,6 @@ const FullPropertySection = () => {
       description: "Details about outdoor features go here...",
     },
   ];
-
-  const agentDetails = {
-    name: "Jane Doe",
-    photo: "https://via.placeholder.com/100",
-    role: "Property Agent",
-    location: "New York, USA",
-    email: "jane.doe@example.com",
-    phone: "+1234567890",
-    socialLinks: [
-      { href: "#", icon: "fab fa-facebook" },
-      { href: "#", icon: "fab fa-twitter" },
-      { href: "#", icon: "fab fa-instagram" },
-    ],
-  };
 
   const propertyDetails = {
     title: "Cozy Apartment in Manhattan",
@@ -71,7 +77,7 @@ const FullPropertySection = () => {
       <div className="card-section" data-aos="fade-right">
         
         {/* Property Details Card */}
-        <PropertyDetails {...propertyDetails} />
+        <PropertyDetails propertyId={propertyId} />
 
         {/* Property Features Section */}
         <PropertyFeatures features={features} />

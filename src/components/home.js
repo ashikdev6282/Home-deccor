@@ -112,7 +112,7 @@ const Home = () => {
           ) : properties.length > 0 ? (
             <div className="property-cards">
               {properties.map((property) => {
-                console.log("Image URL:", property.tp_image); // Debugging
+               
 
                 return (
                   <div className="property-card" key={property.tp_id}>

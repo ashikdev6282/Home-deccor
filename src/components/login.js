@@ -20,13 +20,48 @@ const Login = () => {
     }
   }, []);
 
+  // 🔹 Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
 
+  // 🔹 Validate Password Strength
+  const isValidPassword = (password) => {
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[@#$%^&+=!]).{8,}$/.test(password);
+  };
+
+  // 🔹 Validate Customer Name (Only Letters & Spaces)
+  const isValidCustomerName = (name) => {
+    return /^[a-zA-Z\s]+$/.test(name);
+  };
+
+  // 🔹 Handle Form Submission with Strong Validation
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if fields are empty
+    if (!credentials.customername || !credentials.password) {
+      toast.error("All fields are required!", { position: "top-center" });
+      return;
+    }
+
+    // Check customer name validation
+    if (!isValidCustomerName(credentials.customername)) {
+      toast.error("Customer name should only contain letters and spaces!", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    // Check password strength
+    if (!isValidPassword(credentials.password)) {
+      toast.error(
+        "Password must be at least 8 characters, include a number, a lowercase letter, and a special character!",
+        { position: "top-center" }
+      );
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -35,19 +70,26 @@ const Login = () => {
       );
 
       if (response.data.token) {
-        const token = response.data.token;
-        localStorage.setItem("authToken", token); // Store the token
+        localStorage.setItem("authToken", response.data.token);
 
-        toast.success("Login successful! Redirecting...", { position: "top-center" });
+        toast.success("Login successful! Redirecting...", {
+          position: "top-center",
+        });
 
         setTimeout(() => {
-          navigate("/home"); // Redirect to home after success
+          navigate("/home");
         }, 2000);
       } else {
-        toast.error("No token found in the response.", { position: "top-center" });
+        toast.error("Invalid response from server.", {
+          position: "top-center",
+        });
       }
     } catch (error) {
-      toast.error(error.response?.data?.message || "Login failed.", { position: "top-center" });
+      toast.error(
+        error.response?.data?.message ||
+          "Login failed. Check your credentials!",
+        { position: "top-center" }
+      );
     }
   };
 
@@ -66,7 +108,6 @@ const Login = () => {
               onChange={handleChange}
               required
             />
-            <span></span>
           </div>
           <div className="input-box">
             <input
@@ -77,7 +118,6 @@ const Login = () => {
               onChange={handleChange}
               required
             />
-            <span></span>
           </div>
           <div className="forgot-password">
             <a href="#">Forgot Password?</a>
